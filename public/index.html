@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="https://raw.githubusercontent.com/vitejs/vite/main/docs/public/logo.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>초등학생을 위한 그리기 웹앱</title>
+    <meta name="description" content="초등학생이 다양한 그리기 활동을 할 수 있는 웹앱입니다." />
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#FF5E5B",
+              secondary: "#39A0ED",
+              tertiary: "#4ECDC4",
+              accent: "#FFD166",
+              background: "#F7F9F9",
+            },
+            fontFamily: {
+              sans: ["Comic Sans MS", "Arial", "sans-serif"],
+            }
+          }
+        }
+      }
+    </script>
+    
+    <!-- React, React DOM, React Router, Framer Motion -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-router-dom@6.9.0/umd/react-router-dom.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/framer-motion@10.6.0/dist/framer-motion.js"></script>
+    
+    <!-- Babel for JSX -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
+    <style>
+      body {
+        background-color: #F7F9F9;
+        color: #333;
+        margin: 0;
+        font-family: 'Comic Sans MS', 'Arial', sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      
+      button {
+        border-radius: 0.5rem;
+        padding: 0.5rem 1rem;
+        transition: all 0.2s;
+      }
+      
+      .btn-primary {
+        background-color: #FF5E5B;
+        color: white;
+      }
+      
+      .btn-primary:hover {
+        opacity: 0.9;
+      }
+      
+      .btn-secondary {
+        background-color: #39A0ED;
+        color: white;
+      }
+      
+      .btn-secondary:hover {
+        opacity: 0.9;
+      }
+      
+      .canvas-container {
+        border: 4px solid #e2e8f0;
+        border-radius: 0.75rem;
+        background-color: white;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    
+    <!-- App Scripts -->
+    <script type="text/babel" data-type="module" src="./src/main.jsx"></script>
+    
+    <!-- Fallback for direct opening -->
+    <script type="text/babel">
+      // 직접 HTML 파일을 열었을 때 보여줄 기본 내용
+      if (!window.ReactDOM.root) {
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        
+        const App = () => {
+          return (
+            <div className="min-h-screen flex flex-col items-center justify-center p-4">
+              <h1 className="text-4xl font-bold text-primary mb-6">초등학생을 위한 그리기 웹앱</h1>
+              <p className="text-xl mb-8">웹 서버에서 실행해주세요!</p>
+              <p>이 앱은 <a className="text-blue-500 underline" href="https://codesandbox.io/" target="_blank">CodeSandbox</a>나 
+              <a className="text-blue-500 underline" href="https://stackblitz.com/" target="_blank"> StackBlitz</a>에서 열어주세요.</p>
+            </div>
+          );
+        };
+        
+        root.render(<App />);
+      }
+    </script>
+  </body>
+</html> 
