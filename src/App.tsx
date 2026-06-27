@@ -5,9 +5,6 @@ import { motion, AnimatePresence } from 'framer-motion'
 import AbstractPage from './pages/AbstractPage'
 import CroquisPage from './pages/CroquisPage'
 import CharacterPage from './pages/CharacterPage'
-import EmoticonPage from './pages/EmoticonPage'
-import PortraitPage from './pages/PortraitPage'
-import LandscapePage from './pages/LandscapePage'
 import ComicPage from './pages/ComicPage'
 
 function App() {
@@ -62,9 +59,6 @@ function App() {
             <Route path="/abstract" element={<AbstractPage />} />
             <Route path="/croquis" element={<CroquisPage />} />
             <Route path="/character" element={<CharacterPage />} />
-            <Route path="/emoticon" element={<EmoticonPage />} />
-            <Route path="/portrait" element={<PortraitPage />} />
-            <Route path="/landscape" element={<LandscapePage />} />
             <Route path="/comic" element={<ComicPage />} />
           </Routes>
         </AnimatePresence>
